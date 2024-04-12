@@ -12,6 +12,22 @@ body {
 main {
   width: min(80ch, 100% - 4rem);
   margin-inline: auto;
+  /* background-color: #231009; */
+}
+
+/* 令脚部居中 */
+footer {
+  width: min(80ch, 100% - 4rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+#DDE-header {
+  /* background-color: #231; */
+  width: min(80ch, 100% - 15rem);
+  margin: 3em;
+  margin-inline: auto;
+  align-items: center;
 }
 
 img,

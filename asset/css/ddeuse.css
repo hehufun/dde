@@ -1,9 +1,3 @@
-#DDE-header{
-    background-color: #231f2006;
-    width: min(80ch, 100% - 4rem);
-    margin: 3em;
-}
-
 #DDE-loader {
   --background: #231f20;
   --back-color: #000000;
@@ -11,8 +5,8 @@
   --middle-color: #f39a0b;
   --inner-color: #e71a0f;
   --text-color: #ffffff;
-  width: 72px;
-  height: 72px;
+  width: 116px;
+  height: 116px;
   border-radius: 50px;
   position: relative;
   display: flex;
@@ -31,10 +25,10 @@
 #DDE-loader svg circle {
   position: absolute;
   fill: none;
-  stroke-width: 6px;
+  stroke-width: 6.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transform: rotate(-100deg);
+  transform: rotate(-150deg);
   transform-origin: center;
 }
 
@@ -43,8 +37,8 @@
 }
 
 #DDE-loader svg.circle-outer {
-  height: 100px;
-  width: 100px;
+  height: 107px;
+  width: 107px;
 }
 
 #DDE-loader svg.circle-outer circle {
@@ -62,7 +56,7 @@
 
 #DDE-loader svg.circle-middle {
   height: 74px;
-  width: 75px;
+  width: 74px;
 }
 
 #DDE-loader svg.circle-middle circle {
@@ -102,8 +96,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 1.2px;
   white-space: nowrap;
 }
