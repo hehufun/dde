@@ -1,0 +1,205 @@
+#DDE-header{
+    background-color: #231f2006;
+    width: min(80ch, 100% - 4rem);
+    margin: 3em;
+}
+
+#DDE-loader {
+  --background: #231f20;
+  --back-color: #000000;
+  --outer-color: #ffffff;
+  --middle-color: #f39a0b;
+  --inner-color: #e71a0f;
+  --text-color: #ffffff;
+  width: 72px;
+  height: 72px;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+}
+
+#DDE-loader svg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#DDE-loader svg circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-100deg);
+  transform-origin: center;
+}
+
+#DDE-loader svg circle.back {
+  stroke: var(--back-color);
+}
+
+#DDE-loader svg.circle-outer {
+  height: 100px;
+  width: 100px;
+}
+
+#DDE-loader svg.circle-outer circle {
+  stroke-dasharray: 62.75 188.25;
+}
+
+#DDE-loader svg.circle-outer circle.back {
+  animation: circle-outer135 1.8s ease infinite 0.3s;
+}
+
+#DDE-loader svg.circle-outer circle.front {
+  animation: circle-outer135 1.8s ease infinite 0.15s;
+  stroke: var(--outer-color);
+}
+
+#DDE-loader svg.circle-middle {
+  height: 74px;
+  width: 75px;
+}
+
+#DDE-loader svg.circle-middle circle {
+  stroke-dasharray: 42.5 127.5;
+}
+
+#DDE-loader svg.circle-middle circle.back {
+  animation: circle-middle6123 1.8s ease infinite 0.25s;
+}
+
+#DDE-loader svg.circle-middle circle.front {
+  animation: circle-middle6123 1.8s ease infinite 0.1s;
+  stroke: var(--middle-color);
+}
+
+#DDE-loader svg.circle-inner {
+  height: 48px;
+  width: 48px;
+}
+
+#DDE-loader svg.circle-inner circle {
+  stroke-dasharray: 22 66;
+}
+
+#DDE-loader svg.circle-inner circle.back {
+  animation: circle-inner162 1.8s ease infinite 0.2s;
+}
+
+#DDE-loader svg.circle-inner circle.front {
+  animation: circle-inner162 1.8s ease infinite 0.05s;
+  stroke: var(--inner-color);
+}
+
+#DDE-loader .text {
+  position: absolute;
+  bottom: -45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+
+#DDE-loader .text::before,
+#DDE-loader .text::after {
+  content: attr(data-text);
+}
+
+#DDE-loader .text::before {
+  color: var(--text-color);
+}
+
+#DDE-loader .text::after {
+  color: var(--middle-color);
+  animation: text-animation76 3.6s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes circle-outer135 {
+  0% {
+    stroke-dashoffset: 30;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 301;
+  }
+
+  80% {
+    stroke-dashoffset: 276;
+  }
+
+  100% {
+    stroke-dashoffset: 276;
+  }
+}
+
+@keyframes circle-middle6123 {
+  0% {
+    stroke-dashoffset: 22;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 204;
+  }
+
+  80% {
+    stroke-dashoffset: 187;
+  }
+
+  100% {
+    stroke-dashoffset: 187;
+  }
+}
+
+@keyframes circle-inner162 {
+  0% {
+    stroke-dashoffset: 14;
+  }
+
+  25% {
+    stroke-dashoffset: 0;
+  }
+
+  65% {
+    stroke-dashoffset: 106;
+  }
+
+  80% {
+    stroke-dashoffset: 97;
+  }
+
+  100% {
+    stroke-dashoffset: 97;
+  }
+}
+
+@keyframes text-animation76 {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50% {
+    clip-path: inset(0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
