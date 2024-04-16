@@ -15,6 +15,7 @@ main {
   /* background-color: #231009; */
 }
 
+
 /* 令脚部居中 */
 footer {
   width: min(80ch, 100% - 4rem);
@@ -35,4 +36,46 @@ svg,
 video {
   max-width: 100%;
   display: block;
+}
+
+
+/* 通用按钮样式 */
+.common-button {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  user-select: none;
+  transition: background-color 0.1s ease-in-out;
+  opacity: 0.3;
+}
+
+.common-button:hover {
+  opacity: 0.5;
+}
+
+.common-button:active {
+  opacity: 0.9;
+  background-color: #666;
+}
+
+/* 颜色切换按钮 */
+#toggle-color-scheme-change {
+  top: 10px;
+  right: 10px;
+  font-size: 26px;
+}
+
+/* 回到顶部按钮 */
+#upupup {
+  bottom: 10px;
+  right: 10px;
+  font-size: 26px;
 }

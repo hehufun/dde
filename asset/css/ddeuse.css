@@ -1,10 +1,10 @@
 #DDE-loader {
   --background: #231f20;
   --back-color: #000000;
-  --outer-color: #ffffff;
+  --outer-color: #dadada;
   --middle-color: #f39a0b;
   --inner-color: #e71a0f;
-  --text-color: #ffffff;
+  --text-color: #dadadd;
   width: 116px;
   height: 116px;
   border-radius: 50px;

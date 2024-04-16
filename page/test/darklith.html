@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 基础样式，确保页面在支持暗色模式的设备上默认使用浅色模式 */
+        html {
+            color-scheme: light;
+        }
+
+        /* 为深色模式定义样式，这些样式将在切换到暗色模式时生效 */
+        @media (prefers-color-scheme: dark) {
+            /* 在这里添加您为暗色模式设计的CSS样式 */
+            body {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+    </style>
+
+    <title>黑夜模式切换示例</title>
+</head>
+<body>
+
+    <!-- 添加切换按钮 -->
+    <button id="toggle-dark-mode">切换黑夜模式</button>
+
+    <script>
+        // 获取按钮元素
+        const toggleButton = document.getElementById('toggle-dark-mode');
+
+        // 定义切换黑夜模式的函数
+        function toggleNightMode() {
+            const htmlElement = document.documentElement;
+
+            // 判断当前color-scheme，切换为相反的模式
+            if (htmlElement.style.colorScheme === 'light' || !htmlElement.style.colorScheme) {
+                htmlElement.style.colorScheme = 'dark';
+            } else {
+                htmlElement.style.colorScheme = 'light';
+            }
+        }
+
+        // 为按钮绑定点击事件，触发切换函数
+        toggleButton.addEventListener('click', toggleNightMode);
+    </script>
+
+</body>
+</html>
