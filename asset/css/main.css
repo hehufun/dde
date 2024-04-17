@@ -10,11 +10,15 @@ body {
 }
 
 main {
-  width: min(80ch, 100% - 4rem);
+  width: min(70ch, 100% - 4rem);
   margin-inline: auto;
   /* background-color: #231009; */
 }
 
+a {
+  text-decoration: underline dashed red;
+  color: initial;
+}
 
 /* 令脚部居中 */
 footer {
@@ -34,8 +38,13 @@ footer {
 img,
 svg,
 video {
-  max-width: 100%;
-  display: block;
+  max-width: 98%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
 }
 
 

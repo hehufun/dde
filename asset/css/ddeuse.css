@@ -112,7 +112,7 @@
 
 #DDE-loader .text::after {
   color: var(--middle-color);
-  animation: text-animation76 3.6s ease infinite;
+  animation: text-animation76 1.6s ease infinite;
   position: absolute;
   left: 0;
 }
