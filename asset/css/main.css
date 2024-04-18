@@ -7,6 +7,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.5;
   overflow-wrap: break-word;
+  transition: all 0.36s ease-in-out;
 }
 
 main {
@@ -18,6 +19,16 @@ main {
 a {
   text-decoration: underline dashed red;
   color: initial;
+  background: linear-gradient(to right, red, #fff) no-repeat right bottom;
+  background-size: 0 0.1rem;
+  transition: background-size 0.3s ease-in-out;
+}
+
+/* 设置链接的样式 */
+a:hover {
+  background-position-x: left;
+  text-decoration: none;
+  background-size: 100% 0.15rem;
 }
 
 /* 令脚部居中 */
@@ -29,8 +40,8 @@ footer {
 
 #DDE-header {
   /* background-color: #231; */
-  width: min(80ch, 100% - 15rem);
-  margin: 3em;
+  width: fit-content;
+  margin: 3.5rem auto;
   margin-inline: auto;
   align-items: center;
 }
@@ -68,11 +79,13 @@ video {
 
 .common-button:hover {
   opacity: 0.5;
+  filter: blur(0.1rem);
 }
 
 .common-button:active {
+  filter: none;
   opacity: 0.9;
-  background-color: #666;
+  /* background-color: #666; */
 }
 
 /* 颜色切换按钮 */
@@ -86,5 +99,41 @@ video {
 #upupup {
   bottom: 16px;
   right: 16px;
-  font-size: 26px;
+  font-size: 36px;
+}
+
+/* 滚动加载字幕效果 */
+.loading-text {
+  visibility: hidden;
+  position: relative;
+}
+
+.loading-text::before,
+.loading-text::after {
+  visibility: visible;
+  content: attr(data-text);
+}
+
+.loading-text::after {
+  color: #cf1919;
+  /* font-weight: bold; */
+  filter: blur(0.1rem);
+  animation: textColorScroll 2s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+/* 定义文字滚动动画关键帧 */
+@keyframes textColorScroll {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  50% {
+    clip-path: inset(0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
 }

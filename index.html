@@ -34,9 +34,12 @@
     <h3>数据集介绍</h3>
     <h4>数据分布示意</h4>
 
-    <img src="./asset/pic/datapic/Zircon_Wu_2023.webp" title="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图"
-      alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图，其中中国，欧洲，北美南美西部沿海区域的点位较为密集。"
-      style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023-low.jpg')" />
+    <a href="./asset/pic/datapic/Zircon_Wu_2023.webp" target="_blank"><img
+        src="./asset/pic/datapic/Zircon_Wu_2023-mid.png" title="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图"
+        alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图，其中中国，欧洲，北美南美西部沿海区域的点位较为密集。"
+        style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023-low.jpg')" /></a>
+
+
     <p>源数据包含数据和数据参考文献两部分，ER关系图如下：</p>
     <p>
       其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re。
@@ -49,24 +52,25 @@
       alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库ER关系图, 其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re，两者通过zircon_re列外键约束。"
       style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023ERpic.webp')" />
     <h4>数据表字段</h4>
-    待更新
-    <h4></h4>
+
+    <h4>待更新</h4>
+
+    <p class="loading-text" data-text="更多数据集待更新...">更多数据集接入中</p>
 
     <h2>
-      <a href="./page/ArcGIS/index.html">ArcGIS 在线地图调用</a>
+      <a href="./page/ArcGIS/index.html" target="_blank">ArcGIS 在线地图调用</a>
     </h2>
   </main>
 
   <footer>
-    <!-- 回到顶部按钮 -->
     <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="回到顶端" id="upupup"
       class="common-button">
       🔺
     </button>
-    <!-- 尾部加载动画 -->
+
     <div id="DDE-header">
       <div id="DDE-loader">
-        <svg viewBox="0 0 86 86" class="circle-outer">
+        <svg viewBox="0 0 88 88" class="circle-outer">
           <circle r="40" cy="43" cx="43" class="back"></circle>
           <circle r="40" cy="43" cx="43" class="front"></circle>
           <circle r="40" cy="43" cx="43" class="new"></circle>
@@ -79,12 +83,10 @@
           <circle r="14" cy="17" cx="17" class="back"></circle>
           <circle r="14" cy="17" cx="17" class="front"></circle>
         </svg>
-        <!-- <div data-text="More DDE DataSets accessing..." class="text"></div> -->
         <div data-text="更多数据集接入中..." class="text"></div>
       </div>
     </div>
 
-    <!-- 联系方式 -->
     <p>
       © 2024 DDE DataSets from
       <a href="mailto:he.hu@ddeworld.org">he.hu@ddeworld.org</a>
