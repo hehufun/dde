@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./asset/css/main.css" />
   <link rel="stylesheet" href="./asset/css/ddeuse.css" />
   <script src="./asset/js/main.js"></script>
+  <script src="./asset/js/oldtime.js" type="text/javascript"></script>
+  <!-- <script src="./asset/js/realtime.js" type="text/javascript"></script> -->
 </head>
 
 <body>
@@ -53,13 +55,16 @@
       style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023ERpic.webp')" />
     <h4>数据表字段</h4>
 
-    <h4>待更新</h4>
+    <h4 class="dynamic-text">待更新</h4>
 
     <p class="loading-text" data-text="更多数据集待更新...">更多数据集接入中</p>
 
     <h2>
       <a href="./page/ArcGIS/index.html" target="_blank">ArcGIS 在线地图调用</a>
     </h2>
+    <!-- 文字报时 -->
+    <p id="shichen">时辰加载中...</p>
+    <p id="Totime">实时载入</p>
   </main>
 
   <footer>
@@ -86,6 +91,7 @@
         <div data-text="更多数据集接入中..." class="text"></div>
       </div>
     </div>
+
 
     <p>
       © 2024 DDE DataSets from

@@ -78,13 +78,12 @@ video {
 }
 
 .common-button:hover {
-  opacity: 0.5;
-  filter: blur(0.1rem);
+  opacity: 0.9;
 }
 
 .common-button:active {
-  filter: none;
-  opacity: 0.9;
+  opacity: 0.5;
+  filter: blur(0.1rem);
   /* background-color: #666; */
 }
 
@@ -104,23 +103,21 @@ video {
 
 /* 滚动加载字幕效果 */
 .loading-text {
-  visibility: hidden;
+  /* visibility: hidden; */
   position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, red, white);
+  background-size: 100% 100%;
+  animation: textColorScroll 1s ease infinite;
 }
 
-.loading-text::before,
-.loading-text::after {
-  visibility: visible;
-  content: attr(data-text);
-}
-
-.loading-text::after {
-  color: #cf1919;
-  /* font-weight: bold; */
-  filter: blur(0.1rem);
-  animation: textColorScroll 2s ease infinite;
-  position: absolute;
-  left: 0;
+/* 闪烁字体 */
+.dynamic-text {
+  animation: textAnimation 1.6s ease infinite;
 }
 
 /* 定义文字滚动动画关键帧 */
@@ -135,5 +132,32 @@ video {
 
   100% {
     clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    color: #9c9;
+    transform: translateX(0);
+  }
+
+  20% {
+    color: #f39a0b;
+    transform: translateX(0px);
+  }
+
+  50% {
+    color: #e71a0f;
+    transform: translateX(0px);
+  }
+
+  75% {
+    color: #f39a0b;
+    transform: translateX(0px);
+  }
+
+  100% {
+    color: #9c9;
+    transform: translateX(0);
   }
 }
