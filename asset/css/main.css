@@ -1,9 +1,41 @@
+/* 添加自定义字体 */
+/* 可口可乐字体 */
+@font-face {
+  font-family: "Coca";
+  src: local(""), url("../font/Coca.woff2") format("woff2");
+  font-weight: bolder;
+}
+
+/* Firecode */
+@font-face {
+  font-family: "Fira";
+  src: local(""), url("../font/FiraCode-Bold.woff2") format("woff2");
+}
+
+/* Firecode */
+@font-face {
+  font-family: "Casc";
+  src: local(""), url("../font/CascadiaMono.woff2") format("woff2");
+}
+
+/* 设置全局变量 */
+:root {
+  --vvv: calc(100% - 4rem);
+  --viewwith: min(70ch, 65rem, var(--vvv));
+  --😶‍🌫️dis: calc((100% - var(--viewwith))/2);
+  --gggreen: #99cc99;
+  --🔤family_0: Fira, system-ui;
+  --🔤family_1: Fira, Coca, system-ui;
+  --🔤family_2: Casc, Coca, system-ui;
+}
+
+
 html {
   color-scheme: light dark;
 }
 
 body {
-  font-family: system-ui;
+  font-family: var(--🔤family_0);
   font-size: 1.125rem;
   line-height: 1.5;
   overflow-wrap: break-word;
@@ -11,15 +43,19 @@ body {
 }
 
 main {
-  width: min(70ch, 100% - 4rem);
+  width: var(--viewwith);
   margin-inline: auto;
-  /* background-color: #231009; */
+  padding: 0.5em;
+  /* background-color: ; */
+  /* backdrop-filter: blur(15px) saturate(180%); */
+  /* border-radius: 1em; */
+  /* border: 1px dashed #99cc9980; */
 }
 
 a {
   text-decoration: underline dashed red;
   color: initial;
-  background: linear-gradient(to right, red, #fff) no-repeat right bottom;
+  background: linear-gradient(to right, red, #9c9) no-repeat right bottom;
   background-size: 0 0.1rem;
   transition: background-size 0.3s ease-in-out;
 }
@@ -38,18 +74,11 @@ footer {
   text-align: center;
 }
 
-#DDE-header {
-  /* background-color: #231; */
-  width: fit-content;
-  margin: 3.5rem auto;
-  margin-inline: auto;
-  align-items: center;
-}
 
 img,
 svg,
 video {
-  max-width: 98%;
+  max-width: 100%;
   height: auto;
   vertical-align: middle;
   font-style: italic;
@@ -75,6 +104,7 @@ video {
   user-select: none;
   transition: background-color 0.1s ease-in-out;
   opacity: 0.3;
+  z-index: 16;
 }
 
 .common-button:hover {
@@ -90,15 +120,23 @@ video {
 /* 颜色切换按钮 */
 #toggle-color-scheme-change {
   top: 16px;
-  right: 16px;
+  right: var(--😶‍🌫️dis);
   font-size: 26px;
 }
 
 /* 回到顶部按钮 */
 #upupup {
   bottom: 16px;
-  right: 16px;
+  right: var(--😶‍🌫️dis);
   font-size: 36px;
+}
+
+#DDE-header {
+  /* background-color: #231; */
+  width: fit-content;
+  margin: 3.5rem auto;
+  margin-inline: auto;
+  align-items: center;
 }
 
 /* 滚动加载字幕效果 */
@@ -159,5 +197,121 @@ video {
   100% {
     color: #9c9;
     transform: translateX(0);
+  }
+}
+
+/* 中文年代时间 */
+#shichen,
+#Totime {
+  font-family: var(--🔤family_2);
+  user-select: none;
+}
+
+#titleH1:hover::after {
+  /* visibility: hidden; */
+  font-size: smaller;
+  content: ' DDE古地理组制作';
+  opacity: 0.6;
+}
+
+/* 自动编号 */
+/* 前6级标题自动编号 */
+main {
+  counter-reset: h1counter;
+}
+
+h1 {
+  counter-reset: h2counter;
+}
+
+h2 {
+  counter-reset: h3counter;
+}
+
+h3 {
+  counter-reset: h4counter;
+}
+
+h4 {
+  counter-reset: h5counter;
+}
+
+h5 {
+  counter-reset: h6counter;
+}
+
+h6 {
+  counter-reset: h6counter;
+}
+
+/* h1:before {
+  font-size: 80%;
+  counter-increment: h1counter;
+  content: counter(h1counter) "\0000a0";
+  visibility: visible;
+} */
+
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  font-size: xx-small;
+  animation-duration: 0s;
+}
+
+h2::before {
+  counter-increment: h2counter;
+  /* content: counter(h2counter, cjk-decimal) "、"; */
+  content: counter(h2counter) " ";
+}
+
+h3::before {
+  counter-increment: h3counter;
+  content: counter(h2counter) "." counter(h3counter) "\0000a0";
+}
+
+h4::before {
+  counter-increment: h4counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "\0000a0";
+}
+
+h5::before {
+  counter-increment: h5counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "."
+    counter(h5counter) "\0000a0";
+}
+
+h6::before {
+  counter-increment: h6counter;
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "."
+    counter(h5counter) "." counter(h6counter) "\0000a0";
+}
+
+h2:hover::before,
+h3:hover::before,
+h4:hover::before,
+h5:hover::before,
+h6:hover::before {
+  /* font-size: 120%; */
+  visibility: visible;
+  animation-name: delayedHide;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes delayedHide {
+  0% {
+    /* filter: blur(1px); */
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  /* 维持可见状态至动画结束前 */
+  100% {
+    opacity: 1;
   }
 }

@@ -32,5 +32,3 @@ function toggleColorSchemeMode() {
         toggleButton.textContent = '🌑';
     }
 }
-
-
