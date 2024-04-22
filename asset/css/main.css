@@ -24,6 +24,7 @@
   --viewwith: min(70ch, 65rem, var(--vvv));
   --😶‍🌫️dis: calc((100% - var(--viewwith))/2);
   --gggreen: #99cc99;
+  --fontsize: clamp(0.85rem, 0.85rem + 0.2vw, 1.25rem);
   --🔤family_0: Fira, system-ui;
   --🔤family_1: Fira, Coca, system-ui;
   --🔤family_2: Casc, Coca, system-ui;
@@ -36,7 +37,7 @@ html {
 
 body {
   font-family: var(--🔤family_0);
-  font-size: 1.125rem;
+  font-size: var(--fontsize, 1.125rem);
   line-height: 1.5;
   overflow-wrap: break-word;
   transition: all 0.36s ease-in-out;
@@ -256,7 +257,7 @@ h3::before,
 h4::before,
 h5::before,
 h6::before {
-  font-size: xx-small;
+  /* font-size: xx-small; */
   animation-duration: 0s;
 }
 
