@@ -1,103 +1,100 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./asset/pic/icon.svg" type="image/x-icon" />
+    <title>DDE 整理数据集介绍</title>
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/ddeuse.css" />
+    <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/test.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./asset/pic/icon.svg" type="image/x-icon" />
-  <title>DDE 整理数据集介绍</title>
-  <link rel="stylesheet" href="./asset/css/main.css" />
-  <link rel="stylesheet" href="./asset/css/ddeuse.css" />
-  <script src="./asset/js/main.js"></script>
-  <script src="./asset/js/oldtime.js" type="text/javascript"></script>
-  <!-- <script src="./asset/js/realtime.js" type="text/javascript"></script> -->
-</head>
+  <body>
+    <header>
+      <button
+        onclick="toggleColorSchemeMode()"
+        id="toggle-color-scheme-change"
+        title="切换深色模式/浅色模式"
+        class="common-button"
+      ></button>
+    </header>
 
-<body>
-  <header>
-    <button onclick="toggleColorSchemeMode()" id="toggle-color-scheme-change" title="切换深色模式/浅色模式"
-      class="common-button"></button>
-  </header>
+    <main>
+      <h1 id="titleH1" title="DDE古地理组制作">整理入库数据集</h1>
+      <p>
+        罗列古地理工作组已整理入库的各类地球化学数据集，并将其整理为数据集介绍。
+      </p>
 
-  <main>
-    <h1 id="titleH1" title="DDE古地理组制作">整理入库数据集</h1>
-    <p>
-      罗列古地理工作组已整理入库的各类地球化学数据集，并将其整理为数据集介绍。
-    </p>
+      <h2>Zircon_Wu_2023 锆石数据库</h2>
+      <p>
+        全球大陆地壳锆石U-Th-Pb地质年代学数据库，包含 1,351,483 行同位素数据。
+      </p>
+      <h3>数据来源</h3>
+      <p>来源机构：北京大学，Peking University。</p>
+      <p>数据提供者：Wu Yujing</p>
+      <p>数据更新时间：2023年1月1日。</p>
+      <h3>数据集介绍</h3>
+      <h4>数据分布示意</h4>
 
-    <h2>Zircon_Wu_2023 锆石数据库</h2>
-    <p>
-      全球大陆地壳锆石U-Th-Pb地质年代学数据库，包含 1,351,483 行同位素数据。
-    </p>
-    <h3>数据来源</h3>
-    <p>来源机构：北京大学，Peking University。</p>
-    <p>数据提供者：Wu Yujing</p>
-    <p>数据更新时间：2023年1月1日。</p>
-    <h3>数据集介绍</h3>
-    <h4>数据分布示意</h4>
+      <a href="./asset/pic/data_pic/Zircon_Wu_2023.webp" target="_blank"
+        ><img
+          src="./asset/pic/data_pic/Zircon_Wu_2023-mid.png"
+          title="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图"
+          alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图，其中中国，欧洲，北美南美西部沿海区域的点位较为密集。"
+          style="
+            background-image: url('./asset/pic/data_pic/Zircon_Wu_2023-low.jpg');
+          "
+      /></a>
 
-    <a href="./asset/pic/datapic/Zircon_Wu_2023.webp" target="_blank"><img
-        src="./asset/pic/datapic/Zircon_Wu_2023-mid.png" title="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图"
-        alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库点位分布示意图，其中中国，欧洲，北美南美西部沿海区域的点位较为密集。"
-        style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023-low.jpg')" /></a>
+      <p>源数据包含数据和数据参考文献两部分，ER关系图如下：</p>
 
+      <h4>ER关系图</h4>
+      <img
+        src="./asset/pic/data_pic/Zircon_Wu_2023ERpic.webp"
+        title="全球大陆地壳锆石U-Th-Pb地质年代学数据库ER关系图"
+        alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库ER关系图, 其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re，两者通过zircon_re列外键约束。"
+        style="
+          background-image: url('./asset/pic/data_pic/Zircon_Wu_2023ERpic.webp');
+        "
+      />
 
-    <p>源数据包含数据和数据参考文献两部分，ER关系图如下：</p>
-    <p>
-      其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re。
-    </p>
-    <p>
-      将同位素数据表的zircon_re列外键约束至参考文献数据表主键为：zircon_re
-    </p>
-    <h4>ER关系图</h4>
-    <img src="./asset/pic/datapic/Zircon_Wu_2023ERpic.webp" title="全球大陆地壳锆石U-Th-Pb地质年代学数据库ER关系图"
-      alt="全球大陆地壳锆石U-Th-Pb地质年代学数据库ER关系图, 其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re，两者通过zircon_re列外键约束。"
-      style="background-image: url('./asset/pic/datapic/Zircon_Wu_2023ERpic.webp')" />
-    <h4>数据表字段</h4>
+      <p>
+        其中设置入库的同位素数据表主键为zircon_pk，参考文献数据表主键为：zircon_re。
+      </p>
+      <p>
+        将同位素数据表的zircon_re列外键约束至参考文献数据表主键为：zircon_re
+      </p>
+      <h4>数据表字段</h4>
 
-    <h4 class="dynamic-text">待更新</h4>
+      <h4 class="dynamic-text">待更新</h4>
 
-    <p class="loading-text" data-text="更多数据集待更新...">更多数据集接入中</p>
+      <h2>
+        <a href="./page/ArcGIS/index.html" target="_blank"
+          >ArcGIS 在线地图调用尝试</a
+        >
+      </h2>
+      <p class="loading-text" data-text="更多数据集待更新...">
+        更多数据集接入中
+      </p>
+    </main>
 
-    <h2>
-      <a href="./page/ArcGIS/index.html" target="_blank">ArcGIS 在线地图调用尝试</a>
-    </h2>
-    <!-- 文字报时 -->
-    <!-- <p id="shichen">时辰加载中...</p> -->
-    <!-- <p id="Totime">实时载入</p> -->
-  </main>
+    <footer>
+      <button
+        type="button"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        title="回到顶端"
+        id="backToTop"
+        class="common-button hidden"
+      >
+        🔺
+      </button>
 
-  <footer>
-    <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="回到顶端" id="upupup"
-      class="common-button">
-      🔺
-    </button>
-
-    <div id="DDE-header">
-      <div id="DDE-loader">
-        <svg viewBox="0 0 88 88" class="circle-outer">
-          <circle r="40" cy="43" cx="43" class="back"></circle>
-          <circle r="40" cy="43" cx="43" class="front"></circle>
-          <circle r="40" cy="43" cx="43" class="new"></circle>
-        </svg>
-        <svg viewBox="0 0 60 60" class="circle-middle">
-          <circle r="27" cy="30" cx="30" class="back"></circle>
-          <circle r="27" cy="30" cx="30" class="front"></circle>
-        </svg>
-        <svg viewBox="0 0 34 34" class="circle-inner">
-          <circle r="14" cy="17" cx="17" class="back"></circle>
-          <circle r="14" cy="17" cx="17" class="front"></circle>
-        </svg>
-        <div data-text="更多数据集接入中..." class="text"></div>
-      </div>
-    </div>
-
-
-    <p>
-      © 2024 DDE DataSets from
-      <a href="mailto:he.hu@ddeworld.org">he.hu@ddeworld.org</a>
-    </p>
-  </footer>
-</body>
-
+      <p>
+        © 2024 DDE DataSets from
+        <a href="mailto:he.hu@ddeworld.org">he.hu@ddeworld.org</a>
+      </p>
+    </footer>
+  </body>
 </html>

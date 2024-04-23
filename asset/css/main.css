@@ -6,13 +6,13 @@
   font-weight: bolder;
 }
 
-/* Firecode */
+/* FireCode */
 @font-face {
   font-family: "Fira";
   src: local(""), url("../font/FiraCode-Bold.woff2") format("woff2");
 }
 
-/* Firecode */
+/* Cascadia */
 @font-face {
   font-family: "Casc";
   src: local(""), url("../font/CascadiaMono.woff2") format("woff2");
@@ -21,15 +21,14 @@
 /* 设置全局变量 */
 :root {
   --vvv: calc(100% - 4rem);
-  --viewwith: min(70ch, 65rem, var(--vvv));
-  --😶‍🌫️dis: calc((100% - var(--viewwith))/2);
-  --gggreen: #99cc99;
-  --fontsize: clamp(0.85rem, 0.85rem + 0.2vw, 1.25rem);
+  --view_with: min(70ch, 65rem, var(--vvv));
+  --😶‍🌫️dis: calc((100% - var(--view_with)) / 2);
+  --gg_green: #99cc99;
+  --font_size: clamp(0.85rem, 0.85rem + 0.2vw, 1.25rem);
   --🔤family_0: Fira, system-ui;
   --🔤family_1: Fira, Coca, system-ui;
   --🔤family_2: Casc, Coca, system-ui;
 }
-
 
 html {
   color-scheme: light dark;
@@ -37,14 +36,14 @@ html {
 
 body {
   font-family: var(--🔤family_0);
-  font-size: var(--fontsize, 1.125rem);
+  font-size: var(--font_size, 1.125rem);
   line-height: 1.5;
   overflow-wrap: break-word;
   transition: all 0.36s ease-in-out;
 }
 
 main {
-  width: var(--viewwith);
+  width: var(--view_with);
   margin-inline: auto;
   padding: 0.5em;
   /* background-color: ; */
@@ -75,7 +74,6 @@ footer {
   text-align: center;
 }
 
-
 img,
 svg,
 video {
@@ -87,7 +85,6 @@ video {
   background-size: cover;
   shape-margin: 0.75rem;
 }
-
 
 /* 通用按钮样式 */
 .common-button {
@@ -126,10 +123,11 @@ video {
 }
 
 /* 回到顶部按钮 */
-#upupup {
+#backToTop {
   bottom: 16px;
   right: var(--😶‍🌫️dis);
   font-size: 36px;
+  /* visibility: hidden; */
 }
 
 #DDE-header {
@@ -201,21 +199,13 @@ video {
   }
 }
 
-/* 中文年代时间 */
-#shichen,
-#Totime {
-  font-family: var(--🔤family_2);
-  user-select: none;
-}
-
 #titleH1:hover::after {
   /* visibility: hidden; */
   font-size: smaller;
-  content: ' DDE古地理组制作';
+  content: " DDE古地理组制作";
   opacity: 0.6;
 }
 
-/* 自动编号 */
 /* 前6级标题自动编号 */
 main {
   counter-reset: h1counter;
@@ -245,25 +235,16 @@ h6 {
   counter-reset: h6counter;
 }
 
-/* h1:before {
-  font-size: 80%;
-  counter-increment: h1counter;
-  content: counter(h1counter) "\0000a0";
-  visibility: visible;
-} */
-
 h2::before,
 h3::before,
 h4::before,
 h5::before,
 h6::before {
-  /* font-size: xx-small; */
-  animation-duration: 0s;
+  opacity: 0.6;
 }
 
 h2::before {
   counter-increment: h2counter;
-  /* content: counter(h2counter, cjk-decimal) "、"; */
   content: counter(h2counter) " ";
 }
 
@@ -274,7 +255,8 @@ h3::before {
 
 h4::before {
   counter-increment: h4counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "\0000a0";
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter)
+    "\0000a0";
 }
 
 h5::before {
@@ -294,25 +276,7 @@ h3:hover::before,
 h4:hover::before,
 h5:hover::before,
 h6:hover::before {
-  /* font-size: 120%; */
   visibility: visible;
-  animation-name: delayedHide;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
-}
-
-@keyframes delayedHide {
-  0% {
-    /* filter: blur(1px); */
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 0.6;
-  }
-
-  /* 维持可见状态至动画结束前 */
-  100% {
-    opacity: 1;
-  }
+  filter: brightness(1.5);
+  opacity: 1;
 }
