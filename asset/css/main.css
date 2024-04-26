@@ -32,6 +32,8 @@
 
 html {
   color-scheme: light dark;
+  scroll-behavior: smooth;
+  scroll-padding: 2em;
 }
 
 body {
@@ -213,6 +215,7 @@ main {
 
 h1 {
   counter-reset: h2counter;
+  user-select: none;
 }
 
 h2 {
