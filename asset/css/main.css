@@ -90,33 +90,23 @@ video {
 
 /* 搜索框 */
 #searchInput {
-  width: 360px;
-  /* 设置搜索框宽度 */
-  /* height: 40px; */
-  /* 设置搜索框高度 */
+  width: 60%;
+  max-width: 260px;
+  min-width: 60px;
   padding: 10px;
-  /* 内边距，让文本与边框保持一定距离 */
   border-radius: 20px;
-  /* 圆角效果 */
   border: 2px solid #4CAF50;
-  /* 边框样式和颜色 */
   font-size: 16px;
-  /* 字体大小 */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  /* 添加轻微阴影 */
   transition: all 0.3s ease;
-  /* 平滑过渡效果 */
 }
 
 /* 鼠标悬停或聚焦时的样式变化 */
 #searchInput:hover,
 #searchInput:focus {
-  border-color: #2E7D32;
-  /* 边框颜色变深，以突出显示 */
+  border-color: #99cc99;
   outline: none;
-  /* 移除轮廓，保持界面整洁 */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  /* 阴影加深 */
 }
 
 #searchResults {
