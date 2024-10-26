@@ -90,12 +90,12 @@ video {
 
 /* 搜索框 */
 #searchInput {
-  width: 60%;
-  max-width: 260px;
-  min-width: 60px;
+  width: 90%;
+  /* max-width: 260px; */
+  /* min-width: 60px; */
   padding: 10px;
   border-radius: 20px;
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
   font-size: 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -111,7 +111,7 @@ video {
 
 #searchResults {
   margin-top: 20px;
-  counter-reset: searchresultscounter;
+  counter-reset: search-results-counter;
 }
 
 #searchResults div {
@@ -120,9 +120,8 @@ video {
 }
 
 #searchResults div:before {
-  counter-increment: searchresultscounter;
-  content: counter(searchresultscounter) ".";
-
+  counter-increment: search-results-counter;
+  content: counter(search-results-counter) ".";
 }
 
 /* 通用按钮样式 */
@@ -295,7 +294,8 @@ h3::before {
 
 h4::before {
   counter-increment: h4counter;
-  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "\0000a0";
+  content: counter(h2counter) "." counter(h3counter) "." counter(h4counter)
+    "\0000a0";
 }
 
 h5::before {

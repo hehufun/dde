@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.head.appendChild(newFavicon);
     }
   })();
+
   // 页面载入时检查color-scheme并更新按钮文字
   (function checkColorSchemeOnLoad() {
     const htmlElement = document.documentElement;
@@ -66,8 +67,46 @@ function toggleColorSchemeMode() {
   if (currentColorScheme === "light") {
     htmlElement.style.colorScheme = "dark";
     toggleButton.textContent = "☀️";
+    setCookie("color-scheme", "dark", 365); // 保存为深色模式
   } else {
     htmlElement.style.colorScheme = "light";
     toggleButton.textContent = "🌑";
+    setCookie("color-scheme", "light", 365); // 保存为浅色模式
   }
 }
+
+// 设置cookie
+function setCookie(name, value, days) {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expiresString = "expires=" + expires.toUTCString();
+  document.cookie = name + "=" + value + ";" + expiresString + ";path=/";
+}
+
+// 获取cookie
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+// 页面加载时检查cookie并应用颜色模式
+(function applyColorSchemeFromCookie() {
+  const colorScheme = getCookie("color-scheme");
+  if (colorScheme) {
+    const htmlElement = document.documentElement;
+    const toggleButton = document.getElementById("toggle-color-scheme-change");
+    if (colorScheme === "dark") {
+      htmlElement.style.colorScheme = "dark";
+      toggleButton.textContent = "☀️";
+    } else {
+      htmlElement.style.colorScheme = "light";
+      toggleButton.textContent = "🌑";
+    }
+  }
+})();
