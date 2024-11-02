@@ -73,15 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
             // 使用innerHTML以支持HTML格式，如<br>换行
             resultItem.innerHTML = displayText.trim();
             // 添加双击复制功能
-            resultItem.addEventListener("dblclick", () => {
+            resultItem.addEventListener("dblclick", async () => {
                 const text = resultItem.innerText;
-                const textarea = document.createElement("textarea");
-                textarea.value = text;
-                document.body.appendChild(textarea);
-                textarea.select();
-                // document.execCommand("copy");
-                document.body.removeChild(textarea);
-                alert("所选项结果已复制到剪贴板：" + text);
+                try {
+                    await navigator.clipboard.writeText(text);
+                    alert("所选项结果已复制到剪贴板：" + text);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
             });
             searchResults.appendChild(resultItem);
         });
