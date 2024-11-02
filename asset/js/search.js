@@ -82,6 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.error('Failed to copy text: ', err);
                 }
             });
+            // 添加触摸屏双击复制功能
+            let lastTouchTime = 0;
+            resultItem.addEventListener("touchstart", (event) => {
+                const currentTime = new Date().getTime();
+                if (currentTime - lastTouchTime <= 300) {
+                    // 双击事件
+                    const text = resultItem.innerText;
+                    navigator.clipboard.writeText(text).then(() => {
+                        alert("所选项结果已复制到剪贴板：" + text);
+                    }).catch((err) => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+                lastTouchTime = currentTime;
+            });
             searchResults.appendChild(resultItem);
         });
     }
