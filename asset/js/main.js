@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 如果不存在，创建并添加新的favicon链接
       var newFavicon = document.createElement("link");
       newFavicon.rel = "shortcut icon";
-      newFavicon.href = "../../asset/pic/up.svg";
+      newFavicon.href = "../../asset/pic/search.svg";
       newFavicon.type = "image/x-icon";
 
       document.head.appendChild(newFavicon);

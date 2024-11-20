@@ -1,9 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     const searchInput = document.getElementById("searchInput");
     const searchResults = document.getElementById("searchResults");
 
     async function fetchData() {
         try {
+            // 尝试从localStorage中获取数据
+            const cachedData = localStorage.getItem('dde_ics_data');
+            if (cachedData) {
+                return JSON.parse(cachedData);
+            }
+
             const response = await fetch("../asset/json/dde_ics.json");
             const data = await response.json();
             const headers = data[0];
@@ -15,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
                 return obj;
             });
+
+            // 将数据存储到localStorage中
+            localStorage.setItem('dde_ics_data', JSON.stringify(objects));
+
             return objects;
         } catch (error) {
             console.error("Error loading JSON:", error);
@@ -104,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function search() {
         const keywords = searchInput.value.trim().toLowerCase().split(" ");
         if (keywords == "") {
-            searchResults.innerHTML = "<p>请输入关键词进行搜索 ⌨️</p>";
+            searchResults.innerHTML = "<p>已载入，请输入关键词进行搜索 ⌨️ <br> Just Search</p>";
             return;
         }
 
@@ -143,4 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             search();
         }
     });
+
+    // 页面加载时自动执行搜索
+    search();
 });
