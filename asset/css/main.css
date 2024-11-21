@@ -155,7 +155,7 @@ video {
 
 /* 颜色切换按钮 */
 #toggle-color-scheme-change {
-  top: 16px;
+  top: env(titlebar-area-height, 16px);
   right: var(--😶‍🌫️dis);
   font-size: 26px;
 }
@@ -242,6 +242,7 @@ video {
   font-size: smaller;
   content: " DDE古地理组制作";
   opacity: 0.6;
+  -webkit-app-region: drag;
 }
 
 /* 前6级标题自动编号 */

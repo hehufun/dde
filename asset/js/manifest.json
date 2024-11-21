@@ -44,6 +44,9 @@
       "url": "https://hehu.fun/dde/"
     }
   ],
+  "display_override": [
+    "window-controls-overlay"
+  ],
   "shortcuts": [
     {
       "name": "dde数据集",
