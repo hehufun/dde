@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const text = resultItem.innerText;
                 try {
                     await navigator.clipboard.writeText(text);
-                    alert("所选项结果已复制到剪贴板：" + text);
+                    alert("复制：" + text);
                 } catch (err) {
                     console.error('Failed to copy text: ', err);
                 }
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     // 双击事件
                     const text = resultItem.innerText;
                     navigator.clipboard.writeText(text).then(() => {
-                        alert("所选项结果已复制到剪贴板：" + text);
+                        alert("复制：" + text);
                     }).catch((err) => {
                         console.error('Failed to copy text: ', err);
                     });
